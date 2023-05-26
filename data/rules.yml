@@ -1,0 +1,264 @@
+version: "2.0"
+rules:
+
+  - rule: Despedida
+    steps:
+      - intent: despedida
+      - action: utter_despedida
+      - action: action_restart2
+  
+  
+  #- rule: interactive_story_1
+  #  steps:
+  #  #- intent: saludos
+  #  #- action: action_slot_reset
+  #  #- action: set_name_action
+  #  - action: utter_greet
+  #  - intent: negación
+  #    entities:
+  #    - respuesta: no
+  #  - action: persona_form
+  #  - active_loop: persona_form
+  #  - slot_was_set:
+  #    - es_persona_correcta: no
+  #  - slot_was_set:
+  #    - requested_slot: null
+  #  - active_loop: null
+  #  - action: action_es_o_no
+  #  - action: utter_no_conoce
+  #  - action: action_save_data
+  #  - action: action_restart2
+#
+  - rule: ser transferido o no
+    steps:
+    - action: utter_ser_transferido
+    - intent: afirmación
+    - action: utter_tranfiere
+    - action: action_save_data
+    - action: action_restart2
+
+
+  - rule: ser transferido o no
+    steps:
+    - action: utter_ser_transferido
+    - intent: negación
+    - action: utter_no_tranfiere
+    - action: action_save_data
+    - action: action_restart2
+
+
+
+
+  #- rule: fallback2
+  #  steps:
+  #    - intent: nlu_fallback
+  #    - action: utter_default_repetir
+
+  #- rule: Repetir la última pregunta cuando no se entiende la respuesta
+  #  condition:
+  #  - slot_was_set:
+  #    - predicted_intent: nlu_fallback
+  #  steps:
+  #  - action: action_repeat_last_question
+  #  - intent: ANY  # Agrega esta línea
+  #  - action: action_listen  # Agrega esta línea
+#
+  - rule: Repetir la última pregunta cuando no se entiende la respuesta
+    condition:
+    - slot_was_set:
+      - predicted_intent: nlu_fallback
+    steps:
+    - action: action_repeat_last_question
+    - intent: ANY
+    - action: action_listen
+
+
+
+
+  - rule: eres bot1?
+    steps:
+      - action: utter_greet
+      - intent: eres_humano
+      - action: utter_bot
+      - action: utter_greet_apolo
+
+
+  - rule: eres bot2?
+    steps:
+      - action: utter_ask_question
+      - intent: eres_humano
+      - action: utter_bot
+      - action: utter_ask_question
+
+  - rule: eres bot3?
+    steps:
+      - action: utter_preguntar_conoce
+      - intent: eres_humano
+      - action: utter_bot
+      - action: utter_preguntar_conoce
+
+
+  - rule: eres bot8?
+    steps:
+      - action: utter_no_paga
+      - intent: eres_humano
+      - action: utter_bot
+      - action: utter_no_paga
+      
+ # - rule: fallback2
+ #   steps:
+ #     - intent: out_of_scope
+ #     - action: utter_default
+
+
+  - rule: me repite 1
+    steps:
+      - action: utter_greet
+      - intent: me_repite
+      - action: utter_greet
+
+  - rule: me repite 2
+    steps:
+      - action: utter_greet_apolo
+      - intent: me_repite
+      - action: utter_greet_apolo
+
+  - rule: me repite 3
+    steps:
+      - action: utter_preguntar_conoce
+      - intent: me_repite
+      - action: utter_preguntar_conoce
+
+
+  - rule: me repite 7
+    steps:
+      - action: utter_no_conoce
+      - intent: me_repite
+      - action: utter_no_conoce
+
+
+  - rule: me repite 10
+    steps:
+      - action: utter_ask_question
+      - intent: me_repite
+      - action: utter_ask_question
+
+  - rule: me repite 10
+    steps:
+      - action: utter_ask_question_2
+      - intent: me_repite
+      - action: utter_ask_question_2
+
+  - rule: me repite 11
+    steps:
+      - action: utter_si_paga
+      - intent: me_repite
+      - action: utter_si_paga
+
+  #- rule: me repite 12
+  #  steps:
+  #    - action: utter_default
+  #    - intent: me_repite
+  #    - action: utter_default
+#
+  #- rule: me repite 13
+  #  steps:
+  #    - action: utter_default_repetir
+  #    - intent: me_repite
+  #    - action: utter_default_repetir
+
+  - rule: me repite 13
+    steps:
+      - action: utter_disculpe_molestia
+      - intent: me_repite
+      - action: utter_disculpe_molestia
+
+
+  - rule: me repite 14
+    steps:
+      - action: utter_bot
+      - intent: me_repite
+      - action: utter_bot
+
+  - rule: me repite 14
+    steps:
+      - action: utter_no_paga
+      - intent: me_repite
+      - action: utter_no_paga
+
+  - rule: me repite 14
+    steps:
+      - action: utter_monto
+      - intent: me_repite
+      - action: utter_monto
+  
+  - rule: me repite 15
+    steps:
+      - action: utter_donde
+      - intent: me_repite
+      - action: utter_donde
+
+  - rule: me repite 16
+    steps:
+      - action: utter_cuando
+      - intent: me_repite
+      - action: utter_cuando
+  
+  - rule: me repite 16
+    steps:
+      - action: utter_ser_transferido
+      - intent: me_repite
+      - action: utter_ser_transferido
+
+
+  - rule: donde 1
+    steps:
+      - action: utter_preguntar_conoce
+      - intent: de_donde
+      - action: utter_donde
+      - action: utter_preguntar_conoce
+
+  - rule: deonde 2
+    steps:
+      - action: utter_ask_question
+      - intent: de_donde
+      - action: utter_donde2
+
+  - rule: donde 3
+    steps:
+      - action: utter_greet
+      - intent: de_donde
+      - action: utter_donde
+      - action: utter_greet_apolo
+
+  - rule: donde 4
+    steps:
+      - action: utter_no_paga
+      - intent: de_donde
+      - action: utter_donde
+      - action: utter_no_paga
+      
+
+  - rule: cuanto
+    steps:
+      - action: utter_ask_question
+      - intent: preguntar_monto_deuda
+      - action: utter_monto
+      - action: utter_ask_question_2
+
+  - rule: cuando 
+    steps:
+      - action: utter_ask_question
+      - intent: cuando
+      - action: utter_cuando
+      - action: utter_ask_question_2
+
+   
+  - rule: despedida
+    steps:
+      - intent: despedida
+      - action: utter_despedida
+      - action: action_restart2  
+
+ 
+  

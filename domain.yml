@@ -1,0 +1,164 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- saludos
+- afirmación
+- ANY
+- negación
+- nlu_fallback
+- eres_humano
+- preguntar_monto_deuda
+- de_donde
+- out_of_scope
+- que_fecha
+- preguntar_nombre
+- despedida
+- no_quiero_pagar_intent
+- preguntar_monto
+- me_repite
+- space
+- start
+- inicio
+- que_hora_es
+- cuando
+- sin_dinero_intent
+- estoy_cesante_intent
+- ya_pagué_intent
+- estoy_enfermo_intent
+- desconoce_seguro_intent
+- no_contrate_seguro_intent
+- no_puedo_intent
+- no_quiero_intent
+entities:
+- motivo
+- nombre_persona
+- razon
+- respuesta
+slots:
+  derivado_o_no:
+    type: text
+    influence_conversation: true
+  razon_no_pago:
+    type: text
+    influence_conversation: true
+  phone_number:
+    type: text
+    influence_conversation: false
+  name:
+    type: text
+    influence_conversation: false
+  es_persona_correcta:
+    type: text
+    influence_conversation: true
+  fecha_vcto:
+    type: text
+    influence_conversation: false
+  fecha_pago:
+    type: text
+    influence_conversation: false
+  monto:
+    type: text
+    influence_conversation: false
+  paga_o_no:
+    type: text
+    influence_conversation: true
+  predicted_intent:
+    type: text
+    influence_conversation: false
+  razon_no_pago_fase:
+    type: bool
+    initial_value: False
+    influence_conversation: False
+responses:
+  utter_out_of_scope:
+  - text: Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?
+  utter_greet:
+  - text: Hola!, Mi nombre es Alicia, me comunico con {name}?.
+  utter_greet_apolo:
+  - text: Disculpe, me comunico con {name}?.
+  utter_preguntar_conoce:
+  - text: ¿Usted conoce a {name}?
+  utter_no_conoce:
+  - text: Disculpe la molestia, que tenga buen día. | EXIT
+  utter_ask_question:
+  - text: '{name}, estamos llamando de A L C por su crédito tanner servicios financieros pendiente de pago desde el {fecha_vcto}.​ ¿Puede realizar el pago dentro de los 3 próximos días?​'
+  utter_ask_question_2:
+  - text: '{name}, ¿Puede realizar el pago dentro de los 3 próximos días?​'
+  utter_si_paga:
+  - text: 'Muchas gracias por su tiempo {name}. Su pago ha quedado agendado para el {fecha_pago}, le recordamos que puede pagar en servipag, lider, caja vecina, sencillito y servi estado.​ que tenga un buen dia. | EXIT'
+  utter_default:
+  - text: Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?
+  utter_default_repetir:
+  - text: Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?
+  utter_disculpe_molestia:
+  - text: Disculpe la molestia, que tenga un buen día, Adiós.| EXIT
+  utter_despedida:
+  - text: Muchas gracias por su tiempo, adiós | EXIT
+  utter_bot:
+  - text: Estamos llamando de A L C por su crédito tanner servicios financiero y Soy un asistente virtual.
+  utter_monto:
+  - text: El monto es de {monto} pesos vencida el {fecha_vcto}
+  utter_donde:
+  - text: Estamos llamando de A L C por su crédito tanner servicios financiero .
+  utter_donde2:
+  - text: Estamos llamando de A L C por su crédito tanner servicios financiero  ¿Puede realizar el pago dentro de los 3 próximos días?.
+  utter_no_paga:
+  - text: ¿Podría indicarnos el motivo?
+  utter_no_tranfiere:
+  - text: 'Muchas gracias por su tiempo {name}. Para más información recuerde que puede ingresar a revisar su estado de cuenta en  www.tanner.cl ¡Que tenga un lindo día! | EXIT'
+  utter_ser_transferido:
+  - text: Entiendo, Muchas gracias. ¿necesita que lo transfiera a un ejecutivo para ayudarle a solucionar su situación o aclarar cualquier duda?.​
+  utter_tranfiere:
+  - text: Ok, será derivado con uno de nuestros ejecutivos. Espere en linea por favor | DER
+  utter_cuando:
+  - text: la fecha es el {fecha_vcto}
+actions:
+- action_default_fallback
+- action_es_o_no
+- action_no_paga
+- action_preguntar_persona
+- action_razon_no_pago
+- action_repeat_last_question
+- action_restart2
+- action_save_conoce_o_no
+- action_save_data
+- action_save_intent_paga_o_no
+- action_si_paga
+- action_slot_reset
+- opciones_pago_form
+- set_debts_action
+- set_name_action
+- utter_ask_question
+- utter_ask_question_2
+- utter_bot
+- utter_default
+- utter_default_repetir
+- utter_despedida
+- utter_disculpe_molestia
+- utter_donde
+- utter_donde2
+- utter_greet
+- utter_greet_apolo
+- utter_monto
+- utter_no_conoce
+- utter_no_paga
+- utter_no_tranfiere
+- utter_out_of_scope
+- utter_preguntar_conoce
+- utter_ser_transferido
+- utter_si_paga
+- utter_tranfiere
+
+forms:
+  persona_form:
+    required_slots:
+      es_persona_correcta:
+      - entity: respuesta
+        type: from_entity
+  paga_form:
+    required_slots:
+      paga_o_no:
+      - entity: respuesta
+        type: from_entity

@@ -1,0 +1,27 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: es
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+  - name: FallbackClassifier # Asegúrate de que esté presente en tu pipeline
+    threshold: 0.7
+    ambiguity_threshold: 0.1
+    fallback_action_name: action_default_fallback
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+  - name: TEDPolicy
+    epochs: 100
+    max_history: 10

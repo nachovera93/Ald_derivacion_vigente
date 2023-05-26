@@ -1,0 +1,431 @@
+version: "2.0"
+nlu:
+- intent: afirmación
+  examples: |
+    - [el mismo](respuesta)
+    - [cierto](respuesta)
+    - [claro](respuesta)
+    - [correcto](respuesta)
+    - eso suena bien
+    - [yes](respuesta)
+    - [si](respuesta) porfavor
+    - [porsupuesto](respuesta)
+    - [por supuesto](respuesta)
+    - [claramente](respuesta)
+    - [obviamente](respuesta)
+    - [yup](respuestasi)
+    - [yeah](respuesta)
+    - [yes](respuesta) please
+    - [seguro](respuesta)
+    - [ye](respuesta)
+    - eso sería genial
+    - [positivo](respuesta)
+    - [afirmativo](respuesta)
+    - [Yup](respuesta)
+    - [Yea](respuesta)
+    - [Yeah](respuesta)
+    - [Yeah](respuesta) seguro
+    - [Yep](respuesta)
+    - [Yep](respuesta) suena bien
+    - [Sep]!(respuesta)
+    - [Sipp](respuesta)
+    - [Sip](respuesta)
+    - [Si](respuesta)
+    - [si](respuesta) porfa
+    - [sii](respuesta)
+    - [eso](respuesta)
+    - [sip](respuesta)
+    - ah [si](respuesta)
+    - [si](respuesta)
+    - [sii](respuesta) porque?
+    - [si](respuesta) pero no está
+    - [si](respuesta) dime
+    - [si](respuesta) con el
+    - ah [bueno](respuesta)
+    - [si](respuesta), con ella
+    - [si](respuesta) pero no esta
+    - [si](respuesta) con el mismo
+    - [si](respuesta) con quien
+    - que [si](respuesta)
+    - [sí](respuesta)
+    - [siiii](respuesta)
+    - [siii](respuesta)
+    - la verdad es que [si](respuesta)
+    - [con el](respuesta)
+    - [con ella](respuesta)
+    - [ok](respuesta)
+    - [ti](respuesta)
+    - [tiii](respuesta)
+    - [di](respuesta)
+    - [wi](respuesta)
+    - [mande](respuesta)
+    - [mandé](respuesta)
+    - [digame](respuesta)
+    - [diga](respuesta)
+    - [y](respuesta)
+    - [i](respuesta)
+    - [yy](respuesta)
+    - [soy yo](respuesta)
+    - si [soy yo](respuesta)
+    - [te](respuesta)
+    - [t](respuesta)
+    - [si](respuesta)
+- intent: negación
+  examples: |
+    - [no](respuesta)
+    - [negativo](respuesta)
+    - [nope](respuesta)
+    - [nop](respuesta)
+    - [nó](respuesta)
+    - [nada](respuesta)
+    - [nunca](respuesta)
+    - [jamás](respuesta)
+    - [equivocado](respuesta)
+    - [de ninguna manera](respuesta)
+    - [no](respuesta) creo
+    - [no](respuesta) estoy seguro
+    - [no](respuesta) lo creo
+    - [no](respuesta) lo conozco
+    - [no](respuesta) lo cacho
+    - [no](respuesta) señor
+    - [no](respuesta) señorita
+    - [no](respuesta) soy
+    - [no](respuesta) me gusta eso
+    - [no](respuesta) gracias
+    - [noooooo](respuesta)
+    - [noooo](respuesta)
+    - [nooo](respuesta)
+    - pienso que [no](respuesta)
+    - me [declino](respuesta)
+    - ehh [no](respuesta)
+    - ehhh [no](respuesta)
+    - ah [no](respuesta)
+    - te dije que [no](respuesta)
+    - te dije que [nooo](respuesta)
+    - la verdad es que [no](respuesta)
+    - [no](respuesta) tengo dinero en estos momentos
+- intent: saludos
+  examples: |
+    - hola
+    - ola
+    - alo
+    - que tal?
+    - Hola
+    - Holaaaaaaaaaa
+    - holaaaaaaa
+    - alooooooo
+    - olaaa
+    - yo
+    - buenos dias
+    - hi
+    - alo ahí
+    - hey
+    - buenas tardes
+    - hello
+    - alo?
+    - hola estás ahi?
+    - alo estas ahi?
+    - Hey
+    - hi!
+    - hola tu
+    - Holas
+    - Bienvenido
+    - Hola gertrudis
+    - holas
+    - Alo
+- intent: despedida
+  examples: |
+    - adios
+    - chao
+    - nos vemos
+    - xao
+    - arioz
+    - nos vemos al rato
+    - chau
+    - termine
+    - salir
+    - parar
+    - bye
+    - hasta luego
+    - goodbye
+    - muchas gracias, nos vemos
+    - que tenga un buen dia, adios
+    - bye bye
+    - debo irme
+    - bye bye bot
+    - adios por ahora
+    - adios fue bueno hablar contigo
+    - bye!
+    - chaooo
+    - ciao
+    - cya
+    - farewell
+    - good bye
+    - good bye bot!
+    - buenas noches
+- intent: me_repite
+  examples: |
+    - no entendí repite
+    - repitelo
+    - repite
+    - me puede repetir la pregunta
+    - lo puede repetir?
+    - repita porfavor
+    - no entendí
+    - de nuevo porfavor
+    - me repite porfavor?
+    - no entendí, denuevo  porfa
+    - me puede repetir la pregunta?
+    - no entendi, denuevo porfa
+    - no entendí, repita porfavor
+    - me repite porfa
+    - como
+    - como?
+    - no escuche repita porfavor
+    - repiteme porfavor
+    - no entendi
+    - como dijo?
+    - que necesita?
+- intent: out_of_scope
+  examples: |
+    - No entiendo lo que estás diciendo
+    - Eso está fuera de mi alcance
+    - No estoy seguro de lo que significa eso
+    - Lo siento, no comprendo
+    - No tengo información sobre eso
+    - Eso no tiene sentido para mí
+    - No sé cómo responder a eso
+    - Perdón, no te entiendo
+    - No estoy programado para responder eso
+    - Me temo que eso no está dentro de mis funciones
+    - No tengo la respuesta a esa pregunta
+    - Disculpa, eso no es algo que pueda hacer
+    - No estoy seguro de cómo responder a eso
+    - Me confunde lo que dices
+    - No tengo la capacidad de hacer eso
+    - Eso no es algo que pueda hacer
+    - No entiendo el contexto de tu pregunta
+    - No estoy programado para manejar eso
+    - Me parece que estás fuera de tema
+    - que sucede
+- intent: eres_humano
+  examples: |
+    - eres un bot?
+    - eres bot?
+    - estoy hablando con una ia?
+    - eres un humano o un bot?
+    - eres real?
+    - eres virtual?
+    - eres una ai?
+    - no eres un bot
+    - eres un chatbot
+    - eres un bot real?
+    - eres un robot
+    - eres una inteligencia artifial
+    - eres artifical
+    - eres real
+    - eres de verdad un robot?
+    - eres de verdad un bot?
+    - estas seguro que eres un bot?
+    - bot?
+    - robot?
+    - eres un robot?
+    - con quien hablo?
+    - quien eres?
+    - quien me habla?
+    - con quien estoy hablando?
+    - quien habla
+    - con quien?
+    - disculpa quien habla?
+    - quien me dijo?
+    - con quien
+    - quien llama
+    - quien llama?
+- intent: de_donde
+  examples: |
+    - donde?
+    - de donde llama disculpe?
+    - me repite de donde porfavor?
+    - de donde?
+    - donde
+    - de que parte?
+    - de que parte llama?
+    - de que parte es esto?
+    - Donde
+    - de donde
+    - ¿Desde qué lugar me están llamando?
+    - ¿De dónde me hablan?
+    - ¿Podría decirme desde qué ciudad está llamando?
+    - ¿De qué lugar es la llamada?
+    - ¿Desde qué parte del país me habla?
+    - ¿Cuál es la ubicación de la llamada?
+    - ¿Desde qué región me están llamando?
+    - ¿Podría indicarme el lugar de donde me llama?
+    - ¿De qué lugar específico me habla?
+    - de donde llama
+- intent: cuando
+  examples: |
+    - cuando?
+    - cuando seria?
+    - que día?
+    - ¿Podrías decirme cuándo?
+    - ¿Me podrías indicar cuál es la fecha?
+    - Necesito saber cuándo es.
+    - ¿Cuándo sería eso?
+    - Quisiera conocer la fecha exacta.
+    - ¿Cuál es el día?
+    - ¿Podrías decirme qué fecha es?
+    - ¿Me podrías dar más detalles acerca del día?
+    - ¿Qué día es?
+    - Me gustaría saber cuándo sucede.
+    - ¿Cuál es la fecha en la que se llevará a cabo?
+    - ¿Podrías decirme el día exacto?
+    - ¿Cuándo tendría lugar?
+    - ¿En qué momento sería?
+    - ¿Cuándo está programado?
+    - ¿Qué día sería?
+    - ¿Cuál es la fecha en la que se realiza?
+    - ¿En qué fecha se llevará a cabo?
+    - ¿Cuándo se efectuará?
+- intent: preguntar_monto_deuda
+  examples: |
+    - Cuanto
+    - Cuanto debo
+    - cuanto es?
+    - ¿Podrías decirme cuánto debo en total?
+    - Quiero saber cuánto dinero tengo que pagar por mi deuda.
+    - ¿Podrías decirme cuánto debo abonar para saldar mi cuenta por completo?
+    - ¿Cuál es el monto que tengo que liquidar?
+    - Quisiera saber cuánto es el monto total que tengo que abonar.
+    - ¿Cuánto dinero tengo que pagar para liquidar completamente mi deuda?
+    - ¿Me podrías informar cuál es la cantidad total que debo pagar?
+    - ¿Cuánto tengo que pagar para saldar mi deuda?
+    - Quiero saber cuánto dinero tengo que pagar en total.
+    - ¿Cuál es el monto que debo pagar para liquidar completamente mi saldo pendiente?
+    - Me gustaría saber cuánto debo en total.
+    - ¿Podrías decirme cuánto es el monto que tengo que abonar para saldar mi cuenta?
+    - Quiero saber cuál es la cantidad que tengo que pagar para liquidar mi deuda.
+    - ¿Cuánto tengo que pagar para saldar completamente mi saldo pendiente?
+    - Necesito saber cuánto es el monto que debo abonar para liquidar completamente mi deuda.
+    - ¿Podrías informarme cuál es el monto total que tengo que pagar?
+    - ¿Cuánto tengo que pagar para saldar mi deuda por completo?
+    - Quiero saber cuál es la cantidad que debo abonar para liquidar completamente mi saldo.
+    - ¿Podrías decirme cuál es el monto que tengo que pagar para liquidar mi deuda?
+    - ¿Cuánto tengo que pagar en total por mi deuda?
+    - cuanto
+- intent: nlu_fallback
+  examples: |
+    - de que habla
+    - no se que esta hablando
+- intent: estoy_cesante_intent
+  examples: |
+    - no tengo [trabajo](motivo)
+    - estoy [sin pega](motivo)
+    - estoy [sin trabajo](motivo)
+    - estoy [cesante](motivo)
+    - porque [no tengo trabajo](motivo)
+    - [no tengo pega](motivo)
+    - [no hay pega](motivo)
+    - disculpe [no tengo trabajo](motivo)
+    - me encuentro [desempleado](motivo)
+    - estoy [sin empleo](motivo)
+    - actualmente [no cuento con un trabajo](motivo)
+    - me quedé [sin trabajo](motivo)
+- intent: estoy_enfermo_intent
+  examples: |
+    - estoy [enfermo](motivo)
+    - tengo una [enfermedad](motivo)
+    - estoy [convaleciente](motivo)
+    - me siento [mal](motivo)
+    - padezco de una [enfermedad](motivo)
+    - estoy [indispuesto](motivo)
+    - tengo [gripe](motivo)
+    - me encuentro [enfermo](motivo)
+    - estoy [enferma](motivo)
+    - estoy [decaído](motivo)
+    - tengo [fiebre](motivo)
+    - estoy [mal de salud](motivo)
+- intent: no_puedo_intent
+  examples: |
+    - [no me han pagado](motivo)
+    - [no puedo](motivo)
+    - lo siento, [no podré](motivo)
+    - [incapaz de hacerlo](motivo)
+    - [no puedo hacerlo](motivo)
+    - [imposible para mí](motivo)
+    - [no tengo capacidad para hacerlo](motivo)
+    - [no logro hacerlo](motivo)
+    - [no soy capaz](motivo)
+    - [me es imposible](motivo)
+    - [no puedo cumplir con eso](motivo)
+    - [no me es posible](motivo)
+    - [no puedo realizarlo](motivo)
+
+- intent: no_quiero_intent
+  examples: |
+    - [no quiero](motivo)
+    - lo siento, [no quiero](motivo)
+    - [no deseo hacerlo](motivo)
+    - [no me apetece](motivo)
+    - [no tengo ganas](motivo)
+    - [no me interesa](motivo)
+    - [no me provoca](motivo)
+    - [prefiero no hacerlo](motivo)
+    - [no estoy interesado](motivo)
+    - [no quiero participar](motivo)
+    - [no quiero involucrarme](motivo)
+    - [rechazo hacerlo](motivo)
+- intent: ya_pagué_intent
+  examples: |
+    - [Ya pague](motivo)
+    - yo [ya cancele](motivo) eso
+    - no porque [ya pagué](motivo)
+    - [realicé el pago](motivo)
+    - [he pagado ya](motivo)
+    - [el pago ya se hizo](motivo)
+    - [ya efectué el pago](motivo)
+    - [ya aboné](motivo)
+    - [pagué hace tiempo](motivo)
+    - [ya cubrí el pago](motivo)
+
+- intent: posee_vehiculo_incautado_intent
+  examples: |
+    - [Mi vehículo ha sido incautado](motivo)
+    - [Tengo un vehículo incautado](motivo)
+    - [La policía ha incautado mi coche](motivo)
+    - [Mi coche está incautado](motivo)
+    - [Estoy en la situación de tener un vehículo incautado](motivo)
+    - [Mi vehículo fue confiscado](motivo)
+    - [Mi automóvil está incautado](motivo)
+    - [Se han llevado mi coche](motivo)
+    - [Las autoridades incautaron mi vehículo](motivo)
+    - [Tengo un problema, mi coche ha sido incautado](motivo)
+    - [Mi coche ha sido confiscado](motivo)
+    - [Me han incautado el vehículo](motivo)
+    - [Mi auto está incautado](motivo)
+    - [El vehículo que poseo ha sido incautado](motivo)
+    - [El auto de mi propiedad ha sido incautado](motivo)
+    - [Tengo un coche que ha sido incautado](motivo)
+    - [Tengo un vehículo que fue confiscado](motivo)
+    - [Mi automóvil ha sido confiscado](motivo)
+    - [La autoridad ha incautado mi vehículo](motivo)
+    - [La policía confiscó mi coche](motivo)
+    - [Mi vehículo ha sido confiscado por las autoridades](motivo)
+
+
+- intent: sin_dinero_intent
+  examples: |
+    - [No tengo dinero](motivo)
+    - [Estoy sin dinero](motivo)
+    - [Me quedé sin dinero](motivo)
+    - [No tengo efectivo](motivo)
+    - [No dispongo de dinero](motivo)
+    - [Estoy sin efectivo](motivo)
+    - [Carezco de dinero](motivo)
+    - [Estoy en quiebra](motivo)
+    - [No tengo fondos](motivo)
+    - [Estoy pasando por problemas económicos](motivo)
+    - [Tengo problemas financieros](motivo)
+    - [Estoy corto de dinero](motivo)
+    - [no tengo plata](motivo)
+    - [sin plata](motivo)

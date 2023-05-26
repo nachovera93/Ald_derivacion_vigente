@@ -1,0 +1,21 @@
+version: '3'
+services:
+    rasa:
+      container_name: "rasa_server_sbpay_der"
+      user: root
+      build: 
+        context:  .
+      volumes:
+      - "./:/app"
+      - "./models:/app/models"
+      ports: 
+        - "5002:5005"
+    action_server:
+      container_name: "action_server_sbpay_der"
+      build: 
+        context: actions
+      volumes:
+        - ./actions:/app/actions
+        - ./data:/app/data
+      ports:
+        - 5052:5055
