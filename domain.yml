@@ -107,7 +107,7 @@ responses:
   utter_no_paga:
   - text: ¿Podría indicarnos el motivo?
   utter_no_tranfiere:
-  - text: 'Muchas gracias por su tiempo {name}. Para más información recuerde que puede ingresar a revisar su estado de cuenta en  www.tanner.cl ¡Que tenga un lindo día! | EXIT'
+  - text: 'Muchas gracias por su tiempo {name}. Para más información recuerde que puede ingresar a revisar su estado de cuenta en  triple doble b .tanner.cl ¡Que tenga un lindo día! | EXIT'
   utter_ser_transferido:
   - text: Entiendo, Muchas gracias. ¿necesita que lo transfiera a un ejecutivo para ayudarle a solucionar su situación o aclarar cualquier duda?.​
   utter_tranfiere:
