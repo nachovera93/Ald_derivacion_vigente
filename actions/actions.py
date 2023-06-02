@@ -237,6 +237,49 @@ class ActionConoceONo(Action):
         print(f'es_o_no_intent: {es_o_no_intent}')
 
 
+updated_slots=None
+current_intent_razon=None
+class ActionConoceONo(Action):
+    def name(self):
+        return "action_razon_no_pago"
+
+    def run(self, dispatcher, tracker, domain):
+        # Obtener la intención actual
+        print(f'action_razon_no_pago')
+        latest_message = tracker.latest_message
+        current_intent_razon = latest_message['intent']['name']
+    
+        if isinstance(current_intent_razon, list):
+            current_intent_razon = current_intent_razon[0]
+        
+        print(f'current_intent_razon: {current_intent_razon}')
+        if current_intent_razon == "nlu_fallback":
+              #dispatcher.utter_message(template="utter_ser_transferido")
+              return [SlotSet("razon_no_pago", "Sin razón")]
+        elif(current_intent_razon=="negación"):
+            current_intent_razon="negación"
+        elif(current_intent_razon=="estoy_cesante_intent"):
+            current_intent_razon="cesante"
+        elif(current_intent_razon=="sin_dinero_intent"):
+            current_intent_razon="sin dinero"
+        elif(current_intent_razon=="estoy_enfermo_intent"):
+            current_intent_razon="enfermo"
+        elif(current_intent_razon=="no_puedo_intent"):
+            current_intent_razon="no puede"
+        elif(current_intent_razon=="no_quiero_intent"):
+            current_intent_razon="no quiere"
+        elif(current_intent_razon=="ya_pagué_intent"):
+            current_intent_razon="ya pago"
+        elif(current_intent_razon=="posee_vehiculo_incautado_intent"):
+            current_intent_razon="vehiculo incautado"
+        else:
+           current_intent_razon = None
+        
+        
+        print(f'razon_no_pago: {current_intent_razon}')
+        return [SlotSet("razon_no_pago", current_intent_razon)]
+
+
 class ActionSiPaga(Action):
     def name(self):
         return "action_save_data"
@@ -275,7 +318,9 @@ class ActionSiPaga(Action):
             "monto",
             "paga_o_no",
             "opcion_pago",
-            "phone_number"
+            "phone_number",
+                "razon_no_pago"
+
         ]
         
         slots_to_lower = [
@@ -303,6 +348,7 @@ class ActionSiPaga(Action):
         print(f'opcion_pago: {current_intent}')
         print(f'phone_number: {updated_slots["phone_number"]}')
         print(f'fecha_pago: {updated_slots["fecha_pago"]}')
+        print(f'razon_no_pago: {updated_slots["razon_no_pago"]}')
         
 
 
@@ -323,6 +369,7 @@ class ActionSiPaga(Action):
                 "derivado_o_no":current_intent.lower(),
                 "es_persona_correcta": updated_slots["es_persona_correcta"],
                 "conoce_o_no": updated_slots["conoce_o_no"],
+                "razon_no_pago": updated_slots["razon_no_pago"],
                 "opcion_pago": None,
                 "paga_o_no": None,
                 "name": updated_slots["name"],

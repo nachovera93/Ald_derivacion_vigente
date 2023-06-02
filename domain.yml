@@ -75,17 +75,17 @@ responses:
   utter_out_of_scope:
   - text: Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?
   utter_greet:
-  - text: Hola!, Mi nombre es Alicia, me comunico con {name}?.
+  - text: 'Hola!, Mi nombre es Alicia, me comunico con {name}? responda con un si o un no.'
   utter_greet_apolo:
-  - text: Disculpe, me comunico con {name}?.
+  - text: 'Disculpe, me comunico con {name}? responda con un si o un no.'
   utter_preguntar_conoce:
-  - text: ¿Usted conoce a {name}?
+  - text: '¿Usted conoce a {name}?'
   utter_no_conoce:
   - text: Disculpe la molestia, que tenga buen día. | EXIT
   utter_ask_question:
-  - text: '{name}, estamos llamando de A L C por su crédito tanner servicios financieros pendiente de pago desde el {fecha_vcto}.​ ¿Puede realizar el pago dentro de los 3 próximos días?​'
+  - text: '{name}, estamos llamando de A L C por su crédito tanner servicios financieros pendiente de pago desde el {fecha_vcto}.​ ¿Puede realizar el pago dentro de los 3 próximos días? responda con un si o un no​'
   utter_ask_question_2:
-  - text: '{name}, ¿Puede realizar el pago dentro de los 3 próximos días?​'
+  - text: '{name}, ¿Puede realizar el pago dentro de los 3 próximos días?​ responda con un si o un no'
   utter_si_paga:
   - text: 'Muchas gracias por su tiempo {name}. Su pago ha quedado agendado para el {fecha_pago}, le recordamos que puede pagar en servipag, lider, caja vecina, sencillito y servi estado.​ que tenga un buen dia. | EXIT'
   utter_default:
@@ -103,13 +103,13 @@ responses:
   utter_donde:
   - text: Estamos llamando de A L C por su crédito tanner servicios financiero .
   utter_donde2:
-  - text: Estamos llamando de A L C por su crédito tanner servicios financiero  ¿Puede realizar el pago dentro de los 3 próximos días?.
+  - text: Estamos llamando de A L C por su crédito tanner servicios financiero  ¿Puede realizar el pago dentro de los 3 próximos días? responda con un si o un no.
   utter_no_paga:
   - text: ¿Podría indicarnos el motivo?
   utter_no_tranfiere:
   - text: 'Muchas gracias por su tiempo {name}. Para más información recuerde que puede ingresar a revisar su estado de cuenta en  triple doble b .tanner.cl ¡Que tenga un lindo día! | EXIT'
   utter_ser_transferido:
-  - text: Entiendo, Muchas gracias. ¿necesita que lo transfiera a un ejecutivo para ayudarle a solucionar su situación o aclarar cualquier duda?.​
+  - text: Entiendo, Muchas gracias. ¿necesita que lo transfiera a un ejecutivo para ayudarle a solucionar su situación o aclarar cualquier duda? responda con un si o un no.​
   utter_tranfiere:
   - text: Ok, será derivado con uno de nuestros ejecutivos. Espere en linea por favor | DER
   utter_cuando:
