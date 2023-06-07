@@ -19,3 +19,11 @@ services:
         - ./data:/app/data
       ports:
         - 5058:5055
+
+      networks:
+        - nueva_red
+
+networks:
+  nueva_red:
+    external:
+      name: nueva_red
