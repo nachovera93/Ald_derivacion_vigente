@@ -10,6 +10,8 @@ services:
       - "./models:/app/models"
       ports: 
         - "5008:5005"
+      networks:
+        - nueva_red
     action_server:
       container_name: "action_server_alc_der"
       build: 
