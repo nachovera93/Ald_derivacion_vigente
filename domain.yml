@@ -73,7 +73,7 @@ slots:
     influence_conversation: False
 responses:
   utter_out_of_scope:
-  - text: Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?
+  - text: Lo siento, no entendí lo que dijiste, responda con un si o un no
   utter_greet:
   - text: 'Hola!, Mi nombre es Alicia, me comunico con {name}? responda con un si o un no.'
   utter_greet_apolo:
@@ -89,9 +89,9 @@ responses:
   utter_si_paga:
   - text: 'Muchas gracias por su tiempo {name}. Su pago ha quedado agendado para el {fecha_pago}, le recordamos que puede pagar en servipag, lider, caja vecina, sencillito y servi estado.​ que tenga un buen dia. | EXIT'
   utter_default:
-  - text: Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?
+  - text: Lo siento, no entendí lo que dijiste, responda con un si o un no
   utter_default_repetir:
-  - text: Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?
+  - text: Lo siento, no entendí lo que dijiste, responda con un si o un no
   utter_disculpe_molestia:
   - text: Disculpe la molestia, que tenga un buen día, Adiós.| EXIT
   utter_despedida:

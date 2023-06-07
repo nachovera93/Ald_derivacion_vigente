@@ -49,10 +49,10 @@ rules:
 
 
 
-  #- rule: fallback2
-  #  steps:
-  #    - intent: nlu_fallback
-  #    - action: utter_default_repetir
+  - rule: fallback2
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default_repetir
 
   #- rule: Repetir la última pregunta cuando no se entiende la respuesta
   #  condition:
@@ -123,19 +123,6 @@ rules:
       - intent: me_repite
       - action: utter_greet_apolo
 
-  - rule: me repite 3
-    steps:
-      - action: utter_preguntar_conoce
-      - intent: me_repite
-      - action: utter_preguntar_conoce
-
-
-  - rule: me repite 7
-    steps:
-      - action: utter_no_conoce
-      - intent: me_repite
-      - action: utter_no_conoce
-
 
   - rule: me repite 10
     steps:
@@ -151,27 +138,10 @@ rules:
 
   - rule: me repite 11
     steps:
-      - action: utter_si_paga
+      - action: utter_default_repetir
       - intent: me_repite
-      - action: utter_si_paga
+      - action: utter_default_repetir
 
-  #- rule: me repite 12
-  #  steps:
-  #    - action: utter_default
-  #    - intent: me_repite
-  #    - action: utter_default
-#
-  #- rule: me repite 13
-  #  steps:
-  #    - action: utter_default_repetir
-  #    - intent: me_repite
-  #    - action: utter_default_repetir
-
-  - rule: me repite 13
-    steps:
-      - action: utter_disculpe_molestia
-      - intent: me_repite
-      - action: utter_disculpe_molestia
 
 
   - rule: me repite 14

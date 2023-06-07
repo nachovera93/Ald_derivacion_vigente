@@ -428,20 +428,22 @@ class ActionRepeatLastQuestion(Action):
 
         return []
 
-class ActionFallback(Action):
+from rasa_sdk.events import UserUtteranceReverted, ActionReverted
+from rasa_sdk.executor import CollectingDispatcher
 
+class CustomFallbackAction(Action):
     def name(self) -> Text:
         return "action_default_fallback"
 
-    async def run(
-        self,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> List[Dict[Text, Any]]:
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Aquí puedes personalizar el mensaje predeterminado
+        message = "Lo siento, no entendí lo que dijiste. responda con un si o un no"
+        print("action_default_fallback")
+        # Envía el mensaje al usuario
+        dispatcher.utter_message(text=message)
 
-        # Obtener la intención predicha
-        predicted_intent = tracker.latest_message['intent']['name']
-
-        # Establecer la ranura 'predicted_intent' con la intención predicha
-        return [SlotSet("predicted_intent", predicted_intent)]
+        # Agrega los eventos UserUtteranceReverted y ActionReverted para deshacer la acción de fallback
+        return [UserUtteranceReverted(), ActionReverted()]
