@@ -82,6 +82,7 @@ nlu:
     - [jamás](respuesta)
     - [equivocado](respuesta)
     - [de ninguna manera](respuesta)
+    - [no](respuesta) puedo
     - [no](respuesta) creo
     - [no](respuesta) estoy seguro
     - [no](respuesta) lo creo
@@ -90,6 +91,8 @@ nlu:
     - [no](respuesta) señor
     - [no](respuesta) señorita
     - [no](respuesta) soy
+    - [no](respuesta) quiero
+    - [no](respuesta) quiero aceptar
     - [no](respuesta) me gusta eso
     - [no](respuesta) gracias
     - [noooooo](respuesta)
@@ -104,6 +107,31 @@ nlu:
     - te dije que [nooo](respuesta)
     - la verdad es que [no](respuesta)
     - [no](respuesta) tengo dinero en estos momentos
+    - [no](respuesta) puedo pagar ahora
+    - estoy corto de dinero [no](respuesta) puedo pagar
+    - [no](respuesta) tengo plata ahora
+    - [no](respuesta) cuento con el dinero en este momento
+    - [mas tarde] puede ser?
+    - [mañana](respuesta)
+    - [otro día](respuesta)
+    - [la proxima semana](respuesta)
+    - [el proximo mes](respuesta)
+    - [ el proximo año](respuesta)
+    - [llameme otro día](respuesta)
+    - [me pagan la proxima semana]
+    - [me pagan otro día]
+    - [no](respuesta) esta vez
+    - [no](respuesta) en esta ocasión
+    - [no](respuesta) hoy
+    - [no](respuesta) ahora
+    - [no](respuesta) lo veo factible
+    - [no](respuesta) estoy de acuerdo
+    - definitivamente [no](respuesta)
+    - ni en sueños [no](respuesta)
+    - [como a las 4](respuesta)
+    - [en la noche](respuesta)
+    - [en la mañana](respuesta)
+    - [mañana en la mañana porfa](respuesta)
 - intent: saludos
   examples: |
     - hola
@@ -313,10 +341,7 @@ nlu:
     - ¿Podrías decirme cuál es el monto que tengo que pagar para liquidar mi deuda?
     - ¿Cuánto tengo que pagar en total por mi deuda?
     - cuanto
-- intent: nlu_fallback
-  examples: |
-    - de que habla
-    - no se que esta hablando
+
 - intent: estoy_cesante_intent
   examples: |
     - no tengo [trabajo](motivo)
