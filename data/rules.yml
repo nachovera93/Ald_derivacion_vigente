@@ -29,6 +29,21 @@ rules:
   #  - action: action_save_data
   #  - action: action_restart2
 
+  - rule: utter_no_ser_transferido
+    steps:
+    - action: utter_ser_transferido
+    - intent: negación
+    - action: utter_no_tranfiere
+    - action: action_save_data
+    - action: action_restart2
+
+  - rule: utter_no_ser_transferido
+    steps:
+    - action: utter_ser_transferido
+    - intent: afirmación
+    - action: utter_no_tranfiere
+    - action: action_save_data
+    - action: action_restart2
 
   - rule: fallback2
     steps:
@@ -37,6 +52,21 @@ rules:
     - action: utter_ser_transferido_2
     #- action: utter_ser_transferido
 
+  - rule: utter_ser_transferido_2
+    steps:
+    - action: utter_ser_transferido_2
+    - intent: negación
+    - action: utter_no_tranfiere
+    - action: action_save_data
+    - action: action_restart2
+
+  - rule: utter_ser_transferido_2_afirmación
+    steps:
+    - action: utter_ser_transferido_2
+    - intent: afirmación
+    - action: utter_tranfiere
+    - action: action_save_data
+    - action: action_restart2
 
   - rule: fallback2
     steps:
