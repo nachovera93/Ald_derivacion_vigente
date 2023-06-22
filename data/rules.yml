@@ -41,7 +41,7 @@ rules:
     steps:
     - action: utter_ser_transferido
     - intent: afirmación
-    - action: utter_no_tranfiere
+    - action: utter_tranfiere
     - action: action_save_data
     - action: action_restart2
 
