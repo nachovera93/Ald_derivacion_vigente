@@ -82,7 +82,6 @@ nlu:
     - [jamás](respuesta)
     - [equivocado](respuesta)
     - [de ninguna manera](respuesta)
-    - [no](respuesta) puedo
     - [no](respuesta) creo
     - [no](respuesta) estoy seguro
     - [no](respuesta) lo creo
@@ -106,11 +105,6 @@ nlu:
     - te dije que [no](respuesta)
     - te dije que [nooo](respuesta)
     - la verdad es que [no](respuesta)
-    - [no](respuesta) tengo dinero en estos momentos
-    - [no](respuesta) puedo pagar ahora
-    - estoy corto de dinero [no](respuesta) puedo pagar
-    - [no](respuesta) tengo plata ahora
-    - [no](respuesta) cuento con el dinero en este momento
     - [mas tarde] puede ser?
     - [mañana](respuesta)
     - [otro día](respuesta)

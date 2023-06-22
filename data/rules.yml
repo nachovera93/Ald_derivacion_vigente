@@ -28,25 +28,14 @@ rules:
   #  - action: utter_no_conoce
   #  - action: action_save_data
   #  - action: action_restart2
-#
-  - rule: ser transferido o no
+
+
+  - rule: fallback2
     steps:
     - action: utter_ser_transferido
-    - intent: afirmación
-    - action: utter_tranfiere
-    - action: action_save_data
-    - action: action_restart2
-
-
-  - rule: ser transferido o no
-    steps:
-    - action: utter_ser_transferido
-    - intent: negación
-    - action: utter_no_tranfiere
-    - action: action_save_data
-    - action: action_restart2
-
-
+    - intent: nlu_fallback
+    - action: utter_ser_transferido_2
+    #- action: utter_ser_transferido
 
 
   - rule: fallback2
@@ -62,15 +51,6 @@ rules:
   #  - action: action_repeat_last_question
   #  - intent: ANY  # Agrega esta línea
   #  - action: action_listen  # Agrega esta línea
-#
-  - rule: Repetir la última pregunta cuando no se entiende la respuesta
-    condition:
-    - slot_was_set:
-      - predicted_intent: nlu_fallback
-    steps:
-    - action: action_repeat_last_question
-    - intent: ANY
-    - action: action_listen
 
 
 
@@ -89,13 +69,6 @@ rules:
       - intent: eres_humano
       - action: utter_bot
       - action: utter_ask_question
-
-  - rule: eres bot3?
-    steps:
-      - action: utter_preguntar_conoce
-      - intent: eres_humano
-      - action: utter_bot
-      - action: utter_preguntar_conoce
 
 
   - rule: eres bot8?
@@ -180,7 +153,6 @@ rules:
       - intent: me_repite
       - action: utter_ser_transferido
 
-
   - rule: donde 1
     steps:
       - action: utter_preguntar_conoce
@@ -222,13 +194,6 @@ rules:
       - intent: cuando
       - action: utter_cuando
       - action: utter_ask_question_2
-
-   
-  - rule: despedida
-    steps:
-      - intent: despedida
-      - action: utter_despedida
-      - action: action_restart2  
 
  
   

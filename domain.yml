@@ -31,6 +31,7 @@ intents:
 - no_contrate_seguro_intent
 - no_puedo_intent
 - no_quiero_intent
+- posee_vehiculo_incautado_intent
 entities:
 - motivo
 - nombre_persona
@@ -110,6 +111,8 @@ responses:
   - text: 'Muchas gracias por su tiempo {name}. Para más información recuerde que puede ingresar a revisar su estado de cuenta en  triple doble b .tanner.cl ¡Que tenga un lindo día! | EXIT'
   utter_ser_transferido:
   - text: Entiendo, Muchas gracias. ¿necesita que lo transfiera a un ejecutivo para ayudarle a solucionar su situación o aclarar cualquier duda? responda con un si o un no.​
+  utter_ser_transferido_2:
+  - text: Lo siento, no entendí lo que dijiste ¿necesita que lo transfiera a un ejecutivo para ayudarle a solucionar su situación o aclarar cualquier duda? responda con un si o un no.​
   utter_tranfiere:
   - text: Ok, será derivado con uno de nuestros ejecutivos. Espere en linea por favor | DER
   utter_cuando:
@@ -150,6 +153,7 @@ actions:
 - utter_ser_transferido
 - utter_si_paga
 - utter_tranfiere
+- utter_ser_transferido_2
 
 forms:
   persona_form:
