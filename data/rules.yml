@@ -73,6 +73,14 @@ rules:
       - intent: nlu_fallback
       - action: utter_default_repetir
 
+  - rule: fallback_motivo
+    steps:
+      - action: utter_no_paga
+      - intent: nlu_fallback
+      - action: utter_default_repetir_motivo
+
+  
+
   #- rule: Repetir la última pregunta cuando no se entiende la respuesta
   #  condition:
   #  - slot_was_set:

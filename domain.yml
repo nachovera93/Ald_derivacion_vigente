@@ -93,6 +93,8 @@ responses:
   - text: Lo siento, no entendí lo que dijiste, responda con un si o un no
   utter_default_repetir:
   - text: Lo siento, no entendí lo que dijiste, responda con un si o un no
+  utter_default_repetir_motivo:
+  - text: Lo siento, no entendí lo que dijiste, repite por favor
   utter_disculpe_molestia:
   - text: Disculpe la molestia, que tenga un buen día, Adiós.| EXIT
   utter_despedida:
@@ -154,7 +156,7 @@ actions:
 - utter_si_paga
 - utter_tranfiere
 - utter_ser_transferido_2
-
+- utter_default_repetir_motivo
 forms:
   persona_form:
     required_slots:
